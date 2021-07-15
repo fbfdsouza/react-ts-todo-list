@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
 import TodoList from "./components/TodoList";
 import NewTodo from './components/NewTodo';
+import { Todo } from './models/todo.models'
 
-interface Todo {
-  id: string;
-  text: string;
-}
+
 
 const App: React.FC = () => {
 
-  const [todos, setTodos] = useState<Todo[]>([{id:"Bruno", text: "Maravilhoso"}]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
  function addToto<T extends Todo>(todo: T) {
    
