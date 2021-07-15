@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 
 interface NewTodoProps {
-    addTodo: any;
+    addTodo: (todo: {id: string, text: string}) => void;
 }
 
 const NewTodo: React.FC<NewTodoProps> = (props) => {
