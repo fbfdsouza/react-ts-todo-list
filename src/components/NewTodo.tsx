@@ -1,5 +1,6 @@
 import React, {useRef} from "react";
-import { Todo } from "../models/todo.models"
+import { Todo } from "../models/todo.models";
+import { v4 as uuidv4 } from 'uuid';
 
 interface NewTodoProps {
     addTodo: (todo: Todo) => void;
@@ -11,7 +12,7 @@ const NewTodo: React.FC<NewTodoProps> = (props) => {
     const todoSubmitHandler = (event: React.FormEvent) =>{
         event.preventDefault();
         const enteredText = textInputRef.current!.value;
-        props.addTodo({id: enteredText, text: enteredText});
+        props.addTodo({id: uuidv4(), text: enteredText});
     }
 
     return (
